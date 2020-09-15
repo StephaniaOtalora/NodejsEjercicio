@@ -42,15 +42,13 @@ http
           res.end();
         });
       });
-
     } else if (req.url === urlClientes.pathname) {
       let tabla =
         '<table class="table table-striped"><thead> <tr> <th scope="col">ID</th> <th scope="col">NOMBRE</th> <th scope="col">CONTACTO</th> </tr> </thead> <tbody>';
       let info = "";
-      
+
       fs.readFile("./clientes.html", (error, datos) => {
         axios.get(jcli).then((response) => {
-          console.log("clientes");
           response.data.forEach((element) => {
             tabla =
               tabla +
